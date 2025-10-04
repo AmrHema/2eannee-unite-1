@@ -171,4 +171,5 @@ function renderCards() {
 }
 
 // تشغيل دالة إنشاء البطاقات عند تحميل الصفحة
+
 window.onload = renderCards;
