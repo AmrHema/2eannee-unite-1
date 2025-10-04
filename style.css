@@ -1,0 +1,115 @@
+/* تنسيقات عامة وتحديد الخط */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6; /* لون خلفية فاتح */
+    margin: 0;
+    padding: 0;
+    direction: rtl; /* دعم اللغة العربية */
+    text-align: right;
+}
+
+/* تنسيق رأس الصفحة (Header) */
+.main-header {
+    background-color: #1a5276; /* لون أزرق غامق جديد */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    color: #f1c40f; /* لون ذهبي لاسم الموقع */
+}
+
+.main-header p {
+    margin: 5px 0 0;
+    font-size: 1rem;
+}
+
+/* تنسيق حاوية البطاقات (Grid Layout) */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* تنسيق البطاقة الواحدة */
+.word-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 150px;
+}
+
+/* تأثير التفاعل عند مرور مؤشر الفأرة أو النقر */
+.word-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* تنسيق الكلمة الفرنسية */
+.french-word {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #e74c3c; /* لون مميز للفرنسية */
+    margin-bottom: 5px;
+    text-align: left; /* لضمان ظهور الكلمات اللاتينية بشكل صحيح */
+}
+
+/* تنسيق الترجمة العربية */
+.arabic-translation {
+    font-size: 1.1rem;
+    color: #34495e;
+    margin-bottom: 15px;
+}
+
+/* تنسيق أيقونة النطق */
+.pronounce-icon {
+    font-size: 1.8rem;
+    color: #3498db; /* لون أزرق جذاب */
+    text-align: left;
+    transition: color 0.3s;
+}
+
+/* ************************************** */
+/* تنسيقات إضافية لحالة "جاري النطق"    */
+/* ************************************** */
+.word-card.speaking {
+    border: 3px solid #3498db;
+    background-color: #ebf5fb; /* خلفية فاتحة عند النطق */
+}
+.word-card.speaking .pronounce-icon {
+    color: #e74c3c; /* تغيير لون الأيقونة */
+}
+
+/* ************************************** */
+/* تنسيقات الهواتف (Media Query)        */
+/* ************************************** */
+@media (max-width: 600px) {
+    .main-header h1 {
+        font-size: 2rem;
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr; /* عمود واحد في الهواتف */
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .french-word {
+        font-size: 1.4rem;
+    }
+}
